@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
@@ -20,11 +21,19 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <Navbar />
-      <Charts coinData={coinData} />
+      <Navbar coinData={coinData}/>
+      <Switch>
+        <Route path="/:graph">
+          <Charts coinData={coinData}/>
+        </Route>
+        <Route path="/">
+          <Charts coinData={coinData}/>
+        </Route>
+      </Switch>
+      
     </div>
   );
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Router><App /></Router>, rootElement);
