@@ -9,6 +9,7 @@ import {
   Tooltip
 } from "recharts";
 
+
 const Chart = ({ sparklineData }) => {
   const formattedData = sparklineData
     .map((price, idx) => {
@@ -25,6 +26,7 @@ const Chart = ({ sparklineData }) => {
       return null;
     })
     .filter(data => data);
+
 
   return (
     <LineChart width={1100} height={300} data={formattedData}>

@@ -250,4 +250,30 @@ text-align: left;
     background-color: #1F2022;
     border: none;
   }
+
+  .recharts-line {
+    path {
+      stroke: greenyellow
+    }
+  }
+  .recharts-line-dots {
+    circle {
+      stroke: greenyellow
+    }
+  }
+  .recharts-cartesian-axis {
+    line {
+      stroke: white
+    }
+    .recharts-cartesian-axis-ticks {
+      text {
+        fill: white
+      }
+    }
+  }
+  .recharts-cartesian-grid {
+    line {
+      stroke: #555
+    }
+  }
 }
